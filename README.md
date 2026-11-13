@@ -123,17 +123,71 @@ The screenshots below use test/demo data.
 ## Project Structure
 
 ```text
-lib/
-├── main.dart
-├── screens/
-│   ├── coordinator/
-│   ├── staff/
-│   ├── student/
-│   ├── home_page.dart
-│   ├── login_page.dart
-│   └── register_page.dart
-├── services/
-└── widgets/
+CampusFix/
+│
+├── assets/
+│   └── images/
+│       ├── college_background.jpg
+│       └── college_logo.jpeg
+│
+├── lib/
+│   ├── main.dart
+│   │
+│   ├── screens/
+│   │   ├── home_page.dart
+│   │   ├── login_page.dart
+│   │   ├── register_page.dart
+│   │   │
+│   │   ├── student/
+│   │   │   ├── student_home_page.dart
+│   │   │   ├── my_complaints_page.dart
+│   │   │   ├── report_issue_page.dart
+│   │   │   ├── describe_issue_page.dart
+│   │   │   ├── select_location_page.dart
+│   │   │   ├── upload_images_page.dart
+│   │   │   ├── complaint_details_page.dart
+│   │   │   ├── complaint_success_page.dart
+│   │   │   ├── track.dart
+│   │   │   ├── notifications_page.dart
+│   │   │   ├── student_profile_page.dart
+│   │   │   └── edit_profile_page.dart
+│   │   │
+│   │   ├── staff/
+│   │   │   ├── staff_dashboard_page.dart
+│   │   │   ├── staff_my_issues_page.dart
+│   │   │   └── staff_complaint_details_page.dart
+│   │   │
+│   │   └── coordinator/
+│   │       ├── coordinator_dashboard_page.dart
+│   │       ├── coordinator_complaints_page.dart
+│   │       ├── coordinator_assignments_page.dart
+│   │       ├── coordinator_staff_management_page.dart
+│   │       ├── coordinator_analytics_page.dart
+│   │       ├── coordinator_reports_page.dart
+│   │       ├── coordinator_settings_page.dart
+│   │       └── coordinator_main_page.dart
+│   │
+│   ├── services/
+│   │   ├── auth_service.dart
+│   │   └── complaint_service.dart
+│   │
+│   └── widgets/
+│       ├── complaint_status_card.dart
+│       ├── recent_complaint_card.dart
+│       ├── student_app_bar.dart
+│       ├── student_bottom_navigation.dart
+│       └── student_profile_header.dart
+│
+├── android/
+├── web/
+├── windows/
+├── test/
+│
+├── firebase.json
+├── pubspec.yaml
+├── pubspec.lock
+├── analysis_options.yaml
+└── README.md
 ```
 
 ## Getting Started
