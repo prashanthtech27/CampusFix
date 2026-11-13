@@ -134,7 +134,7 @@ CampusFix/
 │   ├── main.dart
 │   │
 │   ├── screens/
-│   │   ├── home_page.dart
+│   │ 
 │   │   ├── login_page.dart
 │   │   ├── register_page.dart
 │   │   │
