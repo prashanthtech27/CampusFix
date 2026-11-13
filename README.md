@@ -1,5 +1,7 @@
 # CampusFix
-
+<p align="center">
+  <img src="assets/images/campusfix_banner.png" width="100%" alt="CampusFix Project Banner">
+</p>
 **Campus Issue Reporting and Resolution System**
 
 CampusFix is a Flutter-based application designed to make campus maintenance complaints easier to report, assign, track, and resolve. It provides separate workflows for students, maintenance staff, and coordinators.
