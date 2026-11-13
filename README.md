@@ -2,48 +2,113 @@
 
 **Campus Issue Reporting and Resolution System**
 
-CampusFix is a Flutter-based mobile application designed to make campus maintenance complaints easier to report, assign, track, and resolve. It provides separate workflows for students, maintenance staff, and coordinators.
+CampusFix is a Flutter-based application designed to make campus maintenance complaints easier to report, assign, track, and resolve. It provides separate workflows for students, maintenance staff, and coordinators.
 
 ## Project Overview
 
-In many campuses, maintenance issues are reported through informal or disconnected channels such as verbal communication, messages, emails, or written requests. This can make it difficult to track complaints, assign responsibility, and confirm that an issue has been resolved.
-
-CampusFix brings the complaint process into one application so that users can follow each issue through its resolution workflow.
+Campus maintenance issues may be reported through disconnected channels, making it difficult to track progress, assign responsibility, and confirm resolution. CampusFix brings the complaint process into one application and gives each role a clear set of actions.
 
 ## Key Features
 
 ### Student
 - Register and log in.
-- Submit campus maintenance complaints.
-- View submitted complaints and their status.
+- Submit campus maintenance complaints by category and location.
+- View submitted complaints and their current status.
 - Track complaint progress.
-- Receive and view complaint-related notifications.
+- View complaint-related notifications.
 - Manage profile information.
 
 ### Maintenance Staff
 - View complaints assigned to them.
 - Review complaint details.
-- Accept or decline an assignment.
-- Update the progress of assigned work.
-- Mark work as resolved and provide a resolution comment.
+- Track assigned, in-progress, and completed work.
+- Update the progress of assigned complaints.
 
-### Coordinator / Admin
-- View and review reported complaints.
+### Coordinator
+- View and manage reported complaints.
 - Assign complaints to maintenance staff.
-- Monitor assignments and complaint status.
-- Review completed work and verify resolution.
-- Close complaints after verification.
-- Access dashboard and reporting-related screens.
-
-> Features may vary as development progresses. Update this section whenever a feature is added, changed, or removed.
+- Monitor staff workloads and complaint status.
+- Review complaint analytics and department statistics.
+- Generate and export complaint reports.
+- Manage coordinator settings.
 
 ## Complaint Workflow
 
 1. **Report:** A student submits a maintenance complaint.
 2. **Review and assignment:** The coordinator reviews the complaint and assigns it to suitable maintenance staff.
-3. **Accept or decline:** The assigned staff member accepts the task or declines it so it can be reassigned.
-4. **Resolution:** Staff works on the issue, updates its progress, and marks it as resolved with a comment.
-5. **Verification and closure:** The coordinator verifies the work and closes the complaint.
+3. **Accept and work:** Staff reviews the assignment and works on the issue.
+4. **Update:** Staff updates the complaint status and records the work outcome.
+5. **Verification and closure:** The coordinator reviews the completed work and closes the complaint.
+
+## Application Screenshots
+
+The screenshots below use test/demo data.
+
+### Student Module
+
+| Login | Registration |
+|---|---|
+| ![Student login](assets/screenshots/student/login-student.png) | ![Student registration](assets/screenshots/student/student-registration.png) |
+
+| Student dashboard | My complaints |
+|---|---|
+| ![Student dashboard](assets/screenshots/student/student-dashboard.png) | ![My complaints](assets/screenshots/student/my-complaints.png) |
+
+| Complaint details | Report an issue |
+|---|---|
+| ![Complaint details](assets/screenshots/student/complaint-details.png) | ![Report issue](assets/screenshots/student/report-issue.png) |
+
+| Notifications | Student profile |
+|---|---|
+| ![Notifications](assets/screenshots/student/notifications.png) | ![Student profile](assets/screenshots/student/student-profile-overview.png) |
+
+| Profile details | Edit profile |
+|---|---|
+| ![Profile details](assets/screenshots/student/student-profile-details.png) | ![Edit profile](assets/screenshots/student/edit-profile.png) |
+
+### Maintenance Staff Module
+
+| Staff login | Staff dashboard |
+|---|---|
+| ![Maintenance login](assets/screenshots/staff/maintenance-login.png) | ![Staff dashboard](assets/screenshots/staff/staff-dashboard.png) |
+
+| Assigned issues – empty state | Assigned issues – in progress |
+|---|---|
+| ![No assigned issues](assets/screenshots/staff/assigned-issues-empty.png) | ![In progress issues](assets/screenshots/staff/assigned-issues-in-progress.png) |
+
+| Completed issues |
+|---|
+| ![Completed issues](assets/screenshots/staff/assigned-issues-completed.png) |
+
+### Coordinator Module
+
+| Coordinator login | Coordinator dashboard |
+|---|---|
+| ![Coordinator login](assets/screenshots/coordinator/coordinator-login.png) | ![Coordinator dashboard](assets/screenshots/coordinator/coordinator-dashboard.png) |
+
+| Navigation menu | Staff management |
+|---|---|
+| ![Coordinator navigation](assets/screenshots/coordinator/coordinator-navigation.png) | ![Staff management](assets/screenshots/coordinator/staff-management-overview.png) |
+
+| Staff list | Complaint management |
+|---|---|
+| ![Staff list](assets/screenshots/coordinator/staff-management-list.png) | ![Complaint management](assets/screenshots/coordinator/complaint-management.png) |
+
+| Assignment overview | Assignment list |
+|---|---|
+| ![Assignment overview](assets/screenshots/coordinator/assignment-management-overview.png) | ![Assignment list](assets/screenshots/coordinator/assignment-management-list.png) |
+
+| Analytics overview | Analytics charts |
+|---|---|
+| ![Analytics overview](assets/screenshots/coordinator/analytics-overview.png) | ![Analytics charts](assets/screenshots/coordinator/analytics-charts.png) |
+
+| Reports management | Staff performance report |
+|---|---|
+| ![Reports management](assets/screenshots/coordinator/reports-management.png) | ![Staff performance](assets/screenshots/coordinator/staff-performance-reports.png) |
+
+| Coordinator settings | Notification preferences |
+|---|---|
+| ![Coordinator settings](assets/screenshots/coordinator/coordinator-settings.png) | ![Notification preferences](assets/screenshots/coordinator/coordinator-notification-settings.png) |
 
 ## Technology Stack
 
@@ -53,7 +118,6 @@ CampusFix brings the complaint process into one application so that users can fo
 | Programming language | Dart |
 | Authentication | Firebase Authentication |
 | Database | Cloud Firestore |
-| Development tools | Visual Studio Code / Android Studio |
 | Version control | Git and GitHub |
 
 ## Project Structure
@@ -69,24 +133,16 @@ lib/
 │   ├── login_page.dart
 │   └── register_page.dart
 ├── services/
-│   ├── auth_service.dart
-│   └── complaint_service.dart
 └── widgets/
 ```
-
-The `screens` directory contains role-specific application pages. The `services` directory contains authentication and complaint-related logic, while `widgets` contains reusable UI components.
 
 ## Getting Started
 
 ### Prerequisites
-
-Install the following before running the project:
-
-- [Flutter SDK](https://docs.flutter.dev/get-started/install)
-- [Dart SDK](https://dart.dev/get-dart) (included with Flutter)
-- [Android Studio](https://developer.android.com/studio) or [Visual Studio Code](https://code.visualstudio.com/)
+- Flutter SDK
+- Android Studio or Visual Studio Code
 - Git
-- An Android emulator or a physical Android device
+- Android emulator or physical Android device
 
 ### 1. Clone the repository
 
@@ -103,28 +159,14 @@ flutter pub get
 
 ### 3. Configure Firebase
 
-CampusFix uses Firebase Authentication and Cloud Firestore.
+CampusFix uses Firebase Authentication and Cloud Firestore. Configure the Firebase project for your own development environment and ensure the Android application ID and generated FlutterFire options match your Firebase project. Enable the authentication method used by the app and configure the required Firestore database and security rules.
 
-- Open the Firebase project associated with your development environment.
-- Register/configure the Android app using its matching application ID.
-- Configure Firebase for Flutter using the official FlutterFire setup instructions.
-- Ensure the Firebase configuration files and generated options match your Firebase project.
-- Enable the authentication method used by the application.
-- Create and configure the required Cloud Firestore database and security rules.
-
-Do not add Firebase Admin SDK service-account private keys, passwords, or other server secrets to this repository. Review Firebase security rules before using real student or campus data.
+Do not commit Firebase Admin SDK service-account private keys, passwords, or server secrets. Review Firebase security rules before using real student or campus data.
 
 ### 4. Run the application
 
-Check connected devices:
-
 ```bash
 flutter devices
-```
-
-Run CampusFix:
-
-```bash
 flutter run
 ```
 
@@ -143,11 +185,7 @@ flutter run
 
 ## Project Status
 
-CampusFix is an academic project under development. Features, screens, and workflows may be updated as implementation and testing continue.
-
-## Contributing
-
-This project is maintained by the Byte Builders team. Team members should create a separate branch for a feature or fix, test their changes, and submit a pull request for review before merging into `main`.
+CampusFix is an academic project under development. Features and workflows may change as implementation and testing continue.
 
 ## License
 
