@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'staff_profile_page.dart';
 import '../../services/auth_service.dart';
 import '../login_page.dart';
 import '../student/complaint_details_page.dart';
@@ -792,9 +792,7 @@ SizedBox(
   // ==========================================
   // BOTTOM NAVIGATION
   // ==========================================
-
-  void _onNavigationTap(int index) {
-
+void _onNavigationTap(int index) {
   if (index == 0) {
     setState(() {
       _selectedIndex = 0;
@@ -812,16 +810,25 @@ SizedBox(
     return;
   }
 
-  const messages = {
-    2: 'Notifications page will be connected in the next stage.',
-    3: 'Staff Profile page will be connected in the next stage.',
-  };
+  if (index == 3) {
+    Navigator.push(
+      context,
+      MaterialPageRoute<void>(
+        builder: (_) => const StaffProfilePage(),
+      ),
+    );
+    return;
+  }
 
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      content: Text(messages[index] ?? 'Coming soon.'),
-    ),
-  );
+  if (index == 2) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text(
+          'Notifications page will be connected soon.',
+        ),
+      ),
+    );
+  }
 }
 
   Widget _bottomNavigation() {
