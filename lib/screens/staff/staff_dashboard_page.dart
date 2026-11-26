@@ -6,6 +6,7 @@ import '../../services/auth_service.dart';
 import '../login_page.dart';
 import '../student/complaint_details_page.dart';
 import 'staff_my_issues_page.dart';
+import 'staff_notifications_page.dart';
 class StaffDashboardPage extends StatefulWidget {
   const StaffDashboardPage({super.key});
 
@@ -821,14 +822,14 @@ void _onNavigationTap(int index) {
   }
 
   if (index == 2) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text(
-          'Notifications page will be connected soon.',
-        ),
-      ),
-    );
-  }
+  Navigator.push(
+    context,
+    MaterialPageRoute<void>(
+      builder: (_) => const StaffNotificationsPage(),
+    ),
+  );
+  return;
+}
 }
 
   Widget _bottomNavigation() {
